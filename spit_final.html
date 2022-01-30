@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="spit_productpage">
+
+    <title>SPIT_DEMO</title>
+
+
+  </head>
+
+<style>
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  top: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+}
+
+body{
+    background: #000;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.container{
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px;
+
+    scroll-snap-align: start;
+
+}
+
+section header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+}
+
+section header .logo{
+    position: relative;
+    font-size: 1.5em;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+section header .toggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.one h2{
+    color: white;
+    font-size: 5em;
+    left: 10;
+    position: absolute;
+    max-width: 600px;
+    z-index: 10;
+}
+
+
+.sec1_images{
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+.sec1_images:hover{
+    filter: grayscale(0%);
+}
+
+.bg_sec2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.pic_sec2{
+    position: absolute;
+    
+    top: 80px;
+    bottom: 0px;
+    right: 80px;
+    z-index: 100;
+}
+
+.sec2_content{
+    position: absolute;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.sec2_content h2{
+    font-size: 3.5em;
+    color: white;
+    font-weight: 400;
+    line-height: 2em ;
+}
+
+.sec2_content p{
+    color: white;
+}
+
+section{
+    height: 100vh;
+   
+}
+
+
+.bg_sec3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.pic_sec3{
+    position: absolute;
+    height: 80%;
+    top: 120px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+.sec3_content{
+    position: absolute;
+    max-width: 450px;
+    right: 80px;
+    text-align: right ;
+
+    z-index: 10;
+}
+
+.sec3_content h2{
+    font-size: 3em;
+    color: white;
+    font-weight: 400;
+    line-height: 2em ;
+}
+
+.sec3_content p{
+    color: white;
+}
+
+.bg_sec4{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.pic_sec4{
+    position: absolute;
+    
+    top: 280px;
+    width: 40vh;
+    bottom: 0px;
+    right: 80px;
+    z-index: 100;
+}
+
+.sec4_content{
+    position: absolute;
+    max-width: 450px;
+    top: 20px;
+    right: 60px;
+    text-align: left ;
+
+    z-index: 10;
+}
+
+.sec4_content h2{
+    font-size: 3em;
+    color: white;
+    font-weight: 400;
+    line-height: 2em ;
+}
+
+.sec4_content p{
+    align-items: center;
+    color: white;
+    
+}
+
+.sec5_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec5_content h2{
+    color: white;
+   
+    position: absolute;
+    left: 50vh;
+    top: 40vh;
+    max-width: 1000px;
+    
+    font-size: 3.5em;
+}
+
+.sec5_content h2 span{
+    transition: 1s;
+}
+
+
+.sec5_content h2:hover{
+    color: rgb(237, 31, 117);
+    
+    position: absolute;
+    left: 50vh;
+    top: 40vh;
+    max-width: 1000px;
+    
+    font-size: 3.5em;
+}
+
+
+button {
+  border: 0;
+  margin: 15px ;
+  background-color: rgb(237, 31, 117);;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  height: 50px;
+  font-size: 20px;
+  border: white solid;
+
+  padding: 15px 30px;
+
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+button:hover {
+  background-color:rgb(237, 31, 117,0.8);;
+  transition: background-color 90ms;
+}
+
+</style>
+
+
+  <body>
+
+    <div class="container">
+        <section class="one">
+            <h2>Mental Health Matters.</h2>
+
+                <img src="img2.jpg" class="sec1_images" id="img2">          
+
+        </section>
+  
+        <section class="two">
+                 
+      
+            <img src="bg_sec2.jpg" class="bg_sec2">
+            <img src="pic_sec2.png" class="pic_sec2">
+            
+            <div class="sec2_content">
+                <h2>It's Confusing</h2>
+                  <p>Having anxiety and depression is like being scared and tired at the same time It's fear of failure but no urge to be productive.
+                      It's wanting friends but hate socialising. It's wanting to be alone but not wanting to be lonely. It's caring about everything then caring about nothing.
+                      It's feeling everythingat once then feeling paralysing numb.
+                  </p>
+            </div>
+        </section>
+  
+        <section class="three">
+            
+            <img src="bg_sec3.jpg" class="bg_sec3">
+            <img src="pic_sec3.png" class="pic_sec3">
+            
+            <div class="sec3_content">
+                <h2>Time Heals</h2>
+                  <p>Healing doesn't mean the damage never existed. It means the damage no longer controls our lives. 
+                    Feeling the need to be busy all the time is a trauma response and fear-based distraction from what you'd be forced to acknowledge and feel if you slowed down. </p>
+            </div>
+      </section>
+
+        <section class="four">
+            
+            <img src="bg_sec4.jpg" class="bg_sec4">
+            <img src="pic_sec4.png" class="pic_sec4">
+        
+            <div class="sec4_content">
+                <h2>Take A Step Back</h2>
+                <p>When your mental health is bad, give yourself a break. Don't make yourself feel guilty for things you can't do. 
+                  Don't feel bad about eating bad, about not doing as much as you normally would. You're human. It's okay to struggle.
+                Look after yourself, and your mind. It's important. </p>
+            </div>
+        
+        </section>
+
+        <section class="five">
+        
+            <div class="sec5_content">
+                <h2>It's <span>OK</span> to ask for <span>HELP</span>!</h2>
+
+                <button class="btn"><a href="http://192.168.1.3:8504">Activate assistant</a></button>
+            </div>
+        
+        </section>
+
+    </div>
+
+
+        <script type="text/javascript">
+            document.addEventListener("mousemove", function(e){
+                const bg_sec2 = document.querySelector('.bg_sec2');
+                const pic_sec2 = document.querySelector('.pic_sec2');
+                const sec2_content = document.querySelector('.sec2_content');
+
+                bg_sec2.style.width = 100+ e.pageX/100 + '%';
+                bg_sec2.style.height = 100+ e.pageX/100 + '%';
+
+                pic_sec2.style.right = 100+e.pageX/2 + 'px';
+
+                sec2_content.style.left = 100+e.pageX/2.5 + 'px';
+
+
+                const bg_sec3 = document.querySelector('.bg_sec3');
+                const pic_sec3 = document.querySelector('.pic_sec3');
+                const sec3_content = document.querySelector('.sec3_content');
+
+                bg_sec3.style.width = 100+ e.pageX/100 + '%';
+                bg_sec3.style.height = 100+ e.pageX/100 + '%';
+
+                pic_sec3.style.left = 0+e.pageX/2.5+ 'px';
+
+                sec3_content.style.right = 100+e.pageX/2.5 + 'px';
+
+
+                const bg_sec4 = document.querySelector('.bg_sec4');
+                const pic_sec4 = document.querySelector('.pic_sec4');
+                const sec4_content = document.querySelector('.sec4_content');
+
+                bg_sec4.style.width = 100+ e.pageX/100 + '%';
+                bg_sec4.style.height = 100+ e.pageX/100 + '%';
+
+                pic_sec4.style.right = 100+e.pageX/1.5+ 'px';
+
+                sec4_content.style.left = 100+e.pageX/2.5 + 'px';
+            })
+        </script>
+      
+  </body>
+  </html>
